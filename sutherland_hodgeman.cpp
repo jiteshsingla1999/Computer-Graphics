@@ -66,17 +66,16 @@ void suthHodgClip(int poly_points[][2], int poly_size, int clipper_points[][2], 
 }
 int main()
 {
-    int gd = DETECT, gn;
-    initgraph(&gd,&gn,NULL);
+    initwindow(1300,700);
     int poly_size = 3;
     setlinestyle(3, 1, 1);
-    int poly_points[20][2] = {{100,150}, {200,250}, {300,200}};
+    int poly_points[20][2] = {{100,150}, {200,250}, {300,250}, {400,150}};
     for (int i=0; i < poly_size; i++) {
         line(poly_points[i][0], poly_points[i][1], poly_points[(i+1)%poly_size][0], poly_points[(i+1)%poly_size][1]);
     }
                    setcolor(14);
-    int clipper_size = 3;
-    int clipper_points[][2] = {{100,300}, {300,300}, {200,100}};
+    int clipper_size = 4;
+    int clipper_points[][2] = {{100,300}, {100,300}, {300,300},{300,100}};
     for (int i=0; i < clipper_size; i++) {
         line(clipper_points[i][0], clipper_points[i][1], clipper_points[(i+1)%clipper_size][0], clipper_points[(i+1)%clipper_size][1]);
     }
